@@ -13,8 +13,12 @@
 		4143EF7B1F97ABBC0056609D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4143EF7A1F97ABBC0056609D /* Assets.xcassets */; };
 		4143EF7E1F97ABBC0056609D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4143EF7C1F97ABBC0056609D /* LaunchScreen.storyboard */; };
 		4143EF811F97ABBC0056609D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4143EF801F97ABBC0056609D /* main.m */; };
-		4143EF8B1F97AD290056609D /* PagoEfectivoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4143EF8A1F97AC4D0056609D /* PagoEfectivoSDK.framework */; };
-		4143EF8C1F97AD290056609D /* PagoEfectivoSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4143EF8A1F97AC4D0056609D /* PagoEfectivoSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		56233D9F1F9AA13100C3EC27 /* GenerateCipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233D9E1F9AA13100C3EC27 /* GenerateCipViewController.m */; };
+		56233DA21F9AA1B600C3EC27 /* SearchCipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DA11F9AA1B600C3EC27 /* SearchCipViewController.m */; };
+		56233DA51F9AA20200C3EC27 /* PaymentMethodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DA41F9AA20200C3EC27 /* PaymentMethodTableViewController.m */; };
+		56233DA81F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DA71F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m */; };
+		56233DAB1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */; };
+		56233DAE1F9AA3E000C3EC27 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +28,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4143EF8C1F97AD290056609D /* PagoEfectivoSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		4143EF6E1F97ABBC0056609D /* exampleSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4143EF711F97ABBC0056609D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4143EF721F97ABBC0056609D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4143EF711F97ABBC0056609D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Controller/AppDelegate.h; sourceTree = "<group>"; };
+		4143EF721F97ABBC0056609D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../Controller/AppDelegate.m; sourceTree = "<group>"; };
 		4143EF741F97ABBC0056609D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4143EF751F97ABBC0056609D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4143EF781F97ABBC0056609D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,7 +45,18 @@
 		4143EF7D1F97ABBC0056609D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4143EF7F1F97ABBC0056609D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4143EF801F97ABBC0056609D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4143EF8A1F97AC4D0056609D /* PagoEfectivoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PagoEfectivoSDK.framework; sourceTree = "<group>"; };
+		56233D9D1F9AA13100C3EC27 /* GenerateCipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenerateCipViewController.h; sourceTree = "<group>"; };
+		56233D9E1F9AA13100C3EC27 /* GenerateCipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateCipViewController.m; sourceTree = "<group>"; };
+		56233DA01F9AA1B600C3EC27 /* SearchCipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCipViewController.h; sourceTree = "<group>"; };
+		56233DA11F9AA1B600C3EC27 /* SearchCipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCipViewController.m; sourceTree = "<group>"; };
+		56233DA31F9AA20200C3EC27 /* PaymentMethodTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentMethodTableViewController.h; sourceTree = "<group>"; };
+		56233DA41F9AA20200C3EC27 /* PaymentMethodTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentMethodTableViewController.m; sourceTree = "<group>"; };
+		56233DA61F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobilePaymentMethodTableViewController.h; sourceTree = "<group>"; };
+		56233DA71F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobilePaymentMethodTableViewController.m; sourceTree = "<group>"; };
+		56233DA91F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgentPaymentMethodTableViewController.h; sourceTree = "<group>"; };
+		56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentPaymentMethodTableViewController.m; sourceTree = "<group>"; };
+		56233DAC1F9AA3E000C3EC27 /* SummaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
+		56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4143EF8B1F97AD290056609D /* PagoEfectivoSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,15 +90,11 @@
 		4143EF701F97ABBC0056609D /* exampleSDK */ = {
 			isa = PBXGroup;
 			children = (
-				4143EF711F97ABBC0056609D /* AppDelegate.h */,
-				4143EF721F97ABBC0056609D /* AppDelegate.m */,
-				4143EF741F97ABBC0056609D /* ViewController.h */,
-				4143EF751F97ABBC0056609D /* ViewController.m */,
-				4143EF771F97ABBC0056609D /* Main.storyboard */,
-				4143EF7A1F97ABBC0056609D /* Assets.xcassets */,
-				4143EF7C1F97ABBC0056609D /* LaunchScreen.storyboard */,
 				4143EF7F1F97ABBC0056609D /* Info.plist */,
-				4143EF801F97ABBC0056609D /* main.m */,
+				56233D9C1F9AA0D700C3EC27 /* Tools */,
+				56233D9B1F9AA0CE00C3EC27 /* Model */,
+				56233D9A1F9AA0C000C3EC27 /* Controller */,
+				56233D991F9AA09100C3EC27 /* View */,
 			);
 			path = exampleSDK;
 			sourceTree = "<group>";
@@ -93,9 +102,56 @@
 		4143EF871F97ABE30056609D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4143EF8A1F97AC4D0056609D /* PagoEfectivoSDK.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56233D991F9AA09100C3EC27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4143EF771F97ABBC0056609D /* Main.storyboard */,
+				4143EF7C1F97ABBC0056609D /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56233D9A1F9AA0C000C3EC27 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4143EF741F97ABBC0056609D /* ViewController.h */,
+				4143EF751F97ABBC0056609D /* ViewController.m */,
+				56233D9D1F9AA13100C3EC27 /* GenerateCipViewController.h */,
+				56233D9E1F9AA13100C3EC27 /* GenerateCipViewController.m */,
+				56233DA01F9AA1B600C3EC27 /* SearchCipViewController.h */,
+				56233DA11F9AA1B600C3EC27 /* SearchCipViewController.m */,
+				56233DA31F9AA20200C3EC27 /* PaymentMethodTableViewController.h */,
+				56233DA41F9AA20200C3EC27 /* PaymentMethodTableViewController.m */,
+				56233DA61F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.h */,
+				56233DA71F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m */,
+				56233DA91F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.h */,
+				56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */,
+				56233DAC1F9AA3E000C3EC27 /* SummaryViewController.h */,
+				56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56233D9B1F9AA0CE00C3EC27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56233D9C1F9AA0D700C3EC27 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				4143EF801F97ABBC0056609D /* main.m */,
+				4143EF711F97ABBC0056609D /* AppDelegate.h */,
+				4143EF721F97ABBC0056609D /* AppDelegate.m */,
+				4143EF7A1F97ABBC0056609D /* Assets.xcassets */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +226,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56233D9F1F9AA13100C3EC27 /* GenerateCipViewController.m in Sources */,
 				4143EF761F97ABBC0056609D /* ViewController.m in Sources */,
+				56233DAE1F9AA3E000C3EC27 /* SummaryViewController.m in Sources */,
+				56233DA21F9AA1B600C3EC27 /* SearchCipViewController.m in Sources */,
+				56233DA51F9AA20200C3EC27 /* PaymentMethodTableViewController.m in Sources */,
+				56233DA81F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m in Sources */,
 				4143EF811F97ABBC0056609D /* main.m in Sources */,
 				4143EF731F97ABBC0056609D /* AppDelegate.m in Sources */,
+				56233DAB1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF8RPX7UQB;
+				DEVELOPMENT_TEAM = Z894G6Y62M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -325,7 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LF8RPX7UQB;
+				DEVELOPMENT_TEAM = Z894G6Y62M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
