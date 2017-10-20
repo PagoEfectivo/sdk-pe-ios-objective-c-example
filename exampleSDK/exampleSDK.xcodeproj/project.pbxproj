@@ -92,7 +92,6 @@
 			children = (
 				4143EF7F1F97ABBC0056609D /* Info.plist */,
 				56233D9C1F9AA0D700C3EC27 /* Tools */,
-				56233D9B1F9AA0CE00C3EC27 /* Model */,
 				56233D9A1F9AA0C000C3EC27 /* Controller */,
 				56233D991F9AA09100C3EC27 /* View */,
 			);
@@ -134,13 +133,6 @@
 				56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		56233D9B1F9AA0CE00C3EC27 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		56233D9C1F9AA0D700C3EC27 /* Tools */ = {
