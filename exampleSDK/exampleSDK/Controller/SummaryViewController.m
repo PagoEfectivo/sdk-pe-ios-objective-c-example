@@ -18,11 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([_cipResult.currency  isEqual: @"PEN"]){
-        self.sumaryTitle.text = [NSString stringWithFormat:@"Paga S/. %.2f en BCP para reservar tu compra", _cipResult.amount];
-    } else {
-        self.sumaryTitle.text = [NSString stringWithFormat:@"Paga $ %.2f en BCP para reservar tu compra", _cipResult.amount];
+    NSString * currencyType = @"S/.";
+    if ([_cipResult.currency  isEqual: @"USD"]) {
+        currencyType = @"$";
     }
+    self.sumaryTitle.text = [NSString stringWithFormat:@"Paga %@ %.2f en BCP para reservar tu compra",currencyType, _cipResult.amount];
     self.numerCip.text = [NSString stringWithFormat:@"3. Díctale al cajero este código CIP : %d", _cipResult.numberCip];
 }
 
