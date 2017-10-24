@@ -53,7 +53,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"summaryFromMobile"]) {
-        SummaryViewController * view = [segue destinationViewController];
+        SummaryViewController *view = [segue destinationViewController];
         view.cipResult = _cipResult;
     }
 }

@@ -22,7 +22,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -39,8 +38,6 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"%ld",(long)indexPath.row);
     
     if ( indexPath.row == 0) {
         [self performSegueWithIdentifier:@"showMobileMethod" sender:self];
