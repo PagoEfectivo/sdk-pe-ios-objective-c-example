@@ -12,4 +12,6 @@
 
 -(currency) StringToCurrency:(NSString*) value;
 -(documentType) StringToDocumentType: (NSString*) value;
+-(UILabel*) returnLabel : (int) numberLbel;
+-(UITextField*) returnTextField : (int) numberLbel;
 @end

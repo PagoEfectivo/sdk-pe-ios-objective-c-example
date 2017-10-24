@@ -3,7 +3,7 @@
 
 target 'exampleSDK' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-	pod ‘Cocoa’, :path => '~/Desktop/Cocoa’
+  	pod ‘Cocoa’, :path => '~/Desktop/Cocoa’
   use_frameworks!
 	pod 'IQKeyboardManager'
   # Pods for exampleSDK

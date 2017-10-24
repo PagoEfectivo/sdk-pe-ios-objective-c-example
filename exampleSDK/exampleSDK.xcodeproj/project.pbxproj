@@ -21,7 +21,10 @@
 		56233DA81F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DA71F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m */; };
 		56233DAB1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */; };
 		56233DAE1F9AA3E000C3EC27 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */; };
-		FA63D5ED943268EE67AF7E13 /* Pods_exampleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CD17922F9AD4CD5F7A03D4 /* Pods_exampleSDK.framework */; };
+		5666A06B1F9FF1CF00A8D2B6 /* ResultSearchCip.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666A06A1F9FF1CF00A8D2B6 /* ResultSearchCip.m */; };
+		5666A06F1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666A06D1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m */; };
+		5666A0701F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5666A06E1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.xib */; };
+		654EA05B61B36DEB09BFF2AE /* Pods_exampleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CD17922F9AD4CD5F7A03D4 /* Pods_exampleSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +69,11 @@
 		56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentPaymentMethodTableViewController.m; sourceTree = "<group>"; };
 		56233DAC1F9AA3E000C3EC27 /* SummaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		5666A0691F9FF1CF00A8D2B6 /* ResultSearchCip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultSearchCip.h; sourceTree = "<group>"; };
+		5666A06A1F9FF1CF00A8D2B6 /* ResultSearchCip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultSearchCip.m; sourceTree = "<group>"; };
+		5666A06C1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailSearchCipTableViewCell.h; sourceTree = "<group>"; };
+		5666A06D1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailSearchCipTableViewCell.m; sourceTree = "<group>"; };
+		5666A06E1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSearchCipTableViewCell.xib; sourceTree = "<group>"; };
 		7DB38E6C7B48B96608571C1C /* Pods-exampleSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exampleSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-exampleSDK/Pods-exampleSDK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA63D5ED943268EE67AF7E13 /* Pods_exampleSDK.framework in Frameworks */,
+				654EA05B61B36DEB09BFF2AE /* Pods_exampleSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +132,8 @@
 			children = (
 				560969351F9E7F1E003991C0 /* CipResult.h */,
 				560969361F9E7F1E003991C0 /* CipResult.m */,
+				5666A0691F9FF1CF00A8D2B6 /* ResultSearchCip.h */,
+				5666A06A1F9FF1CF00A8D2B6 /* ResultSearchCip.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +141,7 @@
 		56233D991F9AA09100C3EC27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5667C5C11F9FFCB500784EF8 /* Cell */,
 				4143EF771F97ABBC0056609D /* Main.storyboard */,
 				4143EF7C1F97ABBC0056609D /* LaunchScreen.storyboard */,
 			);
@@ -169,6 +180,16 @@
 				560969391F9E860A003991C0 /* Help.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		5667C5C11F9FFCB500784EF8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5666A06C1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.h */,
+				5666A06D1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m */,
+				5666A06E1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		63A8BC225B6AC391371345CF /* Pods */ = {
@@ -244,6 +265,7 @@
 			files = (
 				4143EF7E1F97ABBC0056609D /* LaunchScreen.storyboard in Resources */,
 				4143EF7B1F97ABBC0056609D /* Assets.xcassets in Resources */,
+				5666A0701F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.xib in Resources */,
 				4143EF791F97ABBC0056609D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,11 +337,13 @@
 				4143EF761F97ABBC0056609D /* ViewController.m in Sources */,
 				56233DAE1F9AA3E000C3EC27 /* SummaryViewController.m in Sources */,
 				56233DA21F9AA1B600C3EC27 /* SearchCipViewController.m in Sources */,
+				5666A06F1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m in Sources */,
 				56233DA51F9AA20200C3EC27 /* PaymentMethodTableViewController.m in Sources */,
 				56233DA81F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m in Sources */,
 				4143EF811F97ABBC0056609D /* main.m in Sources */,
 				4143EF731F97ABBC0056609D /* AppDelegate.m in Sources */,
 				5609693A1F9E860A003991C0 /* Help.m in Sources */,
+				5666A06B1F9FF1CF00A8D2B6 /* ResultSearchCip.m in Sources */,
 				560969371F9E7F1E003991C0 /* CipResult.m in Sources */,
 				56233DAB1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m in Sources */,
 			);
