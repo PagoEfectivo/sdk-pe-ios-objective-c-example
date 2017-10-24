@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CipResult.h"
 
 @interface PaymentMethodTableViewController : UITableViewController
 
+@property CipResult *cipResult;
 @end

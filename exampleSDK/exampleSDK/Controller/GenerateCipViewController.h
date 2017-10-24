@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GenerateCipViewController : UIViewController
+@interface GenerateCipViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property UIPickerView *currencyPicker;
+@property UIPickerView *documentTypePicker;
+@property UIDatePicker *dateExpiry;
 @end

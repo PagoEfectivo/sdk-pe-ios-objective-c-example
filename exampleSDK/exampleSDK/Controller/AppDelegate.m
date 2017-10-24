@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PagoEfectivoSDK/PagoEfectivoSDK.h"
-
+#import "IQKeyboardManager/IQKeyboardManager.h"
 @interface AppDelegate ()
 
 @end
@@ -21,6 +21,7 @@
     [PagoEfectivoSDK config:@"Nfybo8h0yN7CFN1ycX+XaG99pj/y3Vt25urt1LXM"
                   accessKey:@"AKIPJP77AHN2DKVIJCCA"
                   serviceId:5];
+    [[IQKeyboardManager sharedManager] isEnabled];
     return YES;
 }
 @end
