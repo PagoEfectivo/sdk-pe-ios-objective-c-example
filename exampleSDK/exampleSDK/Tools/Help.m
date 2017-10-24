@@ -13,14 +13,10 @@
 
 -(currency) StringToCurrency:(NSString*) value {
     
-    //NSMutableDictionary *hola = [NSMutableDictionary alloc];
-    //[hola setValue: PEN forKey:@"PEN"];
-    
     return PEN;
 }
 
 -(documentType) StringToDocumentType: (NSString*) value {
-    
     
     return DNI;
 }

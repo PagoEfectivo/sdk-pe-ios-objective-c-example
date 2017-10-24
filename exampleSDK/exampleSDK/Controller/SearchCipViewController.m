@@ -18,12 +18,12 @@
 static int counter = 0;
 static NSMutableArray *arrayLbls;
 static NSMutableArray *arrayCips;
-static NSMutableArray *resulSearch;
+static NSMutableArray *resultSearch;
 - (void)viewDidLoad {
     [super viewDidLoad];
     arrayLbls = [[NSMutableArray alloc]init];
     arrayCips = [[NSMutableArray alloc]init];
-    resulSearch = [[NSMutableArray alloc]init];
+    resultSearch = [[NSMutableArray alloc]init];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -31,7 +31,7 @@ static NSMutableArray *resulSearch;
     counter = 0;
     [arrayLbls removeAllObjects];
     [arrayCips removeAllObjects];
-    [resulSearch removeAllObjects];
+    [resultSearch removeAllObjects];
 }
 
 - (IBAction)addLblCip:(UIButton *)sender {
@@ -73,10 +73,9 @@ static NSMutableArray *resulSearch;
                 cipResultSearch.statusCip = [[element objectForKey:@"status"] intValue];
                 cipResultSearch.statusNameCip = [element objectForKey:@"statusName"];
                 cipResultSearch.transactionCode = [element objectForKey:@"transactionCode"];
-                [resulSearch addObject:cipResultSearch];
+                [resultSearch addObject:cipResultSearch];
             }
         }
-        NSLog(@"%@",resulSearch);
     }];
 }
 
