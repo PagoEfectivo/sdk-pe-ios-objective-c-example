@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="634" y="132"/>
         </scene>
-        <!--Search Cip View Controller-->
+        <!--Listar Cips-->
         <scene sceneID="HRZ-pI-JxB">
             <objects>
                 <viewController id="AoH-Hf-3Al" customClass="SearchCipViewController" sceneMemberID="viewController">
@@ -99,6 +99,9 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addLblCip:" destination="AoH-Hf-3Al" eventType="touchUpInside" id="f01-QT-ZHi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -116,6 +119,9 @@
                                 <state key="normal" title="Buscar">
                                     <color key="titleColor" red="0.5" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchCip:" destination="AoH-Hf-3Al" eventType="touchUpInside" id="Z96-UY-5BN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,10 +133,45 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Py5-c6-1pZ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Listar Cips" id="of9-xx-t8S">
+                        <barButtonItem key="backBarButtonItem" title=" " id="PMA-Br-6Kz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="positionYBtnSearch" destination="03A-Zw-MQ9" id="F17-Ic-NXO"/>
+                        <segue destination="CfD-dS-iyi" kind="show" id="Okf-Eh-q4Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyE-4a-Yv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1444" y="563"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="fpb-Vy-eiK">
+            <objects>
+                <tableViewController id="CfD-dS-iyi" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1yq-iC-KsL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FYo-dE-x0n">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FYo-dE-x0n" id="0Dq-Zs-ZhW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CfD-dS-iyi" id="lXX-PD-xDW"/>
+                            <outlet property="delegate" destination="CfD-dS-iyi" id="I4s-cj-8aR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0fK-yB-QPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2306" y="563"/>
         </scene>
         <!--Generate Cip View Controller-->
         <scene sceneID="Uun-ZY-6tz">
