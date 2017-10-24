@@ -9,6 +9,8 @@
 #import "SummaryViewController.h"
 
 @interface SummaryViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *sumaryTitle;
+@property (weak, nonatomic) IBOutlet UILabel *numerCip;
 
 @end
 
@@ -16,22 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSString * currencyType = @"S/.";
+    if ([_cipResult.currency  isEqual: @"USD"]) {
+        currencyType = @"$";
+    }
+    self.sumaryTitle.text = [NSString stringWithFormat:@"Paga %@ %.2f en BCP para reservar tu compra",currencyType, _cipResult.amount];
+    self.numerCip.text = [NSString stringWithFormat:@"3. Díctale al cajero este código CIP : %d", _cipResult.numberCip];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

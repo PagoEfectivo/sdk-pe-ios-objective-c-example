@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CipResult.h"
 @interface SummaryViewController : UIViewController
-
+@property CipResult *cipResult;
 @end
