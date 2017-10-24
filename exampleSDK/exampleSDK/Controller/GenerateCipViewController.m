@@ -96,7 +96,7 @@
             _cipResult.currency = [data objectForKey:@"currency"];
             _cipResult.transactionCode = [data objectForKey:@"transactionCode"];
             _cipResult.dateExpiry = [data objectForKey:@"dateExpiry"];
-            _cipResult.numberCip = [[data objectForKey:@"dateExpiry"] intValue];
+            _cipResult.numberCip = [[data objectForKey:@"cip"] intValue];
             dispatch_async(dispatch_get_main_queue(), ^(void){
                 [self performSegueWithIdentifier:@"showPaymentMethod" sender:self];
             });

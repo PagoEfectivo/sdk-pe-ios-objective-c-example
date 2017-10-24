@@ -500,8 +500,8 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="uSE-ug-hMd"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="n6U-8h-o9N" kind="show" id="wzC-63-c4z"/>
-                        <segue destination="IwC-8c-CY7" kind="show" id="AhZ-pc-9qt"/>
+                        <segue destination="n6U-8h-o9N" kind="show" identifier="showMobileMethod" id="wzC-63-c4z"/>
+                        <segue destination="IwC-8c-CY7" kind="show" identifier="showAgentMethod" id="AhZ-pc-9qt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31d-kT-VYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -724,7 +724,10 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="pl3-Zp-RAi"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="0Z2-VB-Y1Z" kind="show" id="i3A-wu-9vI"/>
+                        <outlet property="amountCip" destination="Hv4-CE-Uh1" id="L2e-Ik-sVC"/>
+                        <outlet property="dateExpiryCip" destination="wHC-rL-JB9" id="dHx-Ei-OAl"/>
+                        <outlet property="numberCip" destination="VvX-02-F9N" id="rIi-v0-yAo"/>
+                        <segue destination="0Z2-VB-Y1Z" kind="show" identifier="summaryFromMobile" id="i3A-wu-9vI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3a3-ah-Lje" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -814,6 +817,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UXt-cg-VcV"/>
                     </view>
+                    <connections>
+                        <outlet property="numerCip" destination="Wxl-Yz-1ah" id="N5c-qF-4M2"/>
+                        <outlet property="sumaryTitle" destination="riC-Hs-6ze" id="JP5-IR-Gp4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbx-m8-y5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1068,7 +1075,10 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="bbl-xc-Jio"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="0Z2-VB-Y1Z" kind="show" id="R8w-2Z-KoQ"/>
+                        <outlet property="amountCip" destination="7ds-xb-h6s" id="Elx-nl-0cS"/>
+                        <outlet property="dateExpiryCip" destination="9Bg-hA-DDI" id="eg2-aP-rW7"/>
+                        <outlet property="numberCip" destination="hMR-Se-MGz" id="Zcs-LQ-9TX"/>
+                        <segue destination="0Z2-VB-Y1Z" kind="show" identifier="summaryFromAgent" id="R8w-2Z-KoQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1j-D9-XTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
