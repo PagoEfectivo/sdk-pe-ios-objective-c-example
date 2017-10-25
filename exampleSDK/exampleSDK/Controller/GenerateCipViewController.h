@@ -13,4 +13,5 @@
 @property UIPickerView *currencyPicker;
 @property UIPickerView *documentTypePicker;
 @property UIDatePicker *dateExpiry;
+-(void) setupPiker: (UIPickerView*) picker;
 @end

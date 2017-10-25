@@ -137,28 +137,29 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="PMA-Br-6Kz"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnSearch" destination="YsH-Mb-VzX" id="A0r-Fi-hhu"/>
                         <outlet property="positionYBtnSearch" destination="03A-Zw-MQ9" id="F17-Ic-NXO"/>
-                        <segue destination="CfD-dS-iyi" kind="show" id="Okf-Eh-q4Y"/>
+                        <segue destination="CfD-dS-iyi" kind="show" identifier="showResultSearch" id="Okf-Eh-q4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyE-4a-Yv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1444" y="563"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Resultado de búsqueda-->
         <scene sceneID="fpb-Vy-eiK">
             <objects>
-                <tableViewController id="CfD-dS-iyi" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1yq-iC-KsL">
+                <tableViewController id="CfD-dS-iyi" customClass="ResultSearchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1yq-iC-KsL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FYo-dE-x0n">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="FYo-dE-x0n">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FYo-dE-x0n" id="0Dq-Zs-ZhW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -168,6 +169,7 @@
                             <outlet property="delegate" destination="CfD-dS-iyi" id="I4s-cj-8aR"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Resultado de búsqueda" id="g9A-TR-fSH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fK-yB-QPP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -395,6 +397,7 @@
                         <outlet property="adminEmailCip" destination="D4f-cl-Rwm" id="GFh-i5-pb4"/>
                         <outlet property="amountCip" destination="6wE-5H-QUY" id="S2o-eT-eDp"/>
                         <outlet property="btnNextView" destination="aIP-ig-qW3" id="YFe-7E-xTh"/>
+                        <outlet property="btngenerateCip" destination="aIP-ig-qW3" id="V2V-z2-6yX"/>
                         <outlet property="currencyCip" destination="jET-gy-ry7" id="zdH-wy-aNa"/>
                         <outlet property="dateExpiryCip" destination="9qM-tI-JKu" id="qJt-h6-wat"/>
                         <outlet property="paymentConceptCip" destination="JRR-zw-z6C" id="Urh-6Y-fBQ"/>

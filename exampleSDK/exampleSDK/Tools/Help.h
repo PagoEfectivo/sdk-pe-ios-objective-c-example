@@ -14,4 +14,7 @@
 -(documentType) StringToDocumentType: (NSString*) value;
 -(UILabel*) returnLabel : (int) numberLbel;
 -(UITextField*) returnTextField : (int) numberLbel;
+-(NSString*) stringToTypeDate : (NSString*) string;
+-(UIActivityIndicatorView*) createRefresher: (UIView*)view;
+-(UIAlertController*) simpleAlert: (NSString*) message time: (double) time;
 @end

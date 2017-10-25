@@ -21,6 +21,7 @@
 		56233DA81F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DA71F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m */; };
 		56233DAB1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */; };
 		56233DAE1F9AA3E000C3EC27 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */; };
+		565E626B1FA0D6E10063195D /* ResultSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565E626A1FA0D6E10063195D /* ResultSearchTableViewController.m */; };
 		5666A06B1F9FF1CF00A8D2B6 /* ResultSearchCip.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666A06A1F9FF1CF00A8D2B6 /* ResultSearchCip.m */; };
 		5666A06F1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5666A06D1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m */; };
 		5666A0701F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5666A06E1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.xib */; };
@@ -69,6 +70,8 @@
 		56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgentPaymentMethodTableViewController.m; sourceTree = "<group>"; };
 		56233DAC1F9AA3E000C3EC27 /* SummaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		565E62691FA0D6E10063195D /* ResultSearchTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultSearchTableViewController.h; sourceTree = "<group>"; };
+		565E626A1FA0D6E10063195D /* ResultSearchTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultSearchTableViewController.m; sourceTree = "<group>"; };
 		5666A0691F9FF1CF00A8D2B6 /* ResultSearchCip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultSearchCip.h; sourceTree = "<group>"; };
 		5666A06A1F9FF1CF00A8D2B6 /* ResultSearchCip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultSearchCip.m; sourceTree = "<group>"; };
 		5666A06C1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailSearchCipTableViewCell.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */,
 				56233DAC1F9AA3E000C3EC27 /* SummaryViewController.h */,
 				56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */,
+				565E62691FA0D6E10063195D /* ResultSearchTableViewController.h */,
+				565E626A1FA0D6E10063195D /* ResultSearchTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				4143EF761F97ABBC0056609D /* ViewController.m in Sources */,
 				56233DAE1F9AA3E000C3EC27 /* SummaryViewController.m in Sources */,
 				56233DA21F9AA1B600C3EC27 /* SearchCipViewController.m in Sources */,
+				565E626B1FA0D6E10063195D /* ResultSearchTableViewController.m in Sources */,
 				5666A06F1F9FF7F700A8D2B6 /* DetailSearchCipTableViewCell.m in Sources */,
 				56233DA51F9AA20200C3EC27 /* PaymentMethodTableViewController.m in Sources */,
 				56233DA81F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m in Sources */,

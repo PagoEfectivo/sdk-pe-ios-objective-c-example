@@ -8,6 +8,7 @@
 
 #import "MobilePaymentMethodTableViewController.h"
 #import "SummaryViewController.h"
+#import "Help.h"
 
 @interface MobilePaymentMethodTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *numberCip;
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     self.numberCip.text = [NSString stringWithFormat:@"%d",_cipResult.numberCip];
     self.amountCip.text = [NSString stringWithFormat:@"%.2f",_cipResult.amount];
-    self.dateExpiryCip.text = _cipResult.dateExpiry;
+    self.dateExpiryCip.text = [[Help alloc]stringToTypeDate:@"2017-10-26T11:33:59-05:00"];
 }
 
 - (void)didReceiveMemoryWarning {
