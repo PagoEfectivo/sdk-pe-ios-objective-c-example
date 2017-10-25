@@ -38,21 +38,25 @@
     return aux;
 }
 
--(UILabel*) returnLabel : (int) numberLbel {
-
-    UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(70, 140 + 45*(int) numberLbel , 50, 40)];
-    UIFont * customFont = [UIFont fontWithName:@"System" size:15];
+-(UILabel*) returnLabel : (int) numberLbel text: (NSString*)text positionX: (int)positionX positionY: (int)positionY width: (int)width height: (int)height {
+    
+    int distanceY = positionY + numberLbel * 45;
+    int distanceX = positionX;
+    UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(distanceX, distanceY , width, height)];
+    UIFont * customFont = [UIFont fontWithName:@"System" size:14];
     lbl.textColor = [UIColor blackColor];
     lbl.textColor=[UIColor blackColor];
     lbl.font = customFont;
-    lbl.text= @"CIP";
+    lbl.numberOfLines = 0;
+    lbl.textAlignment = NSTextAlignmentJustified;
+    lbl.text= text;
     
     return lbl;
 }
 
 -(UITextField*) returnTextField : (int) numberLbel {
     
-    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(130, 140 + 45*(int) numberLbel , 173, 35)];
+    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(100, 140 + 45*(int) numberLbel , 173, 35)];
     [textField setBorderStyle:UITextBorderStyleRoundedRect];
     [textField setKeyboardType:UIKeyboardTypeNumberPad];
     
@@ -90,13 +94,23 @@
     return alert;
 }
 
-/*-(UIAlertController*) customAlert: (NSArray*) message time: (double) time {
-    
-    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error!" message:message preferredStyle:UIAlertControllerStyleAlert];
+-(UIAlertController*) customAlert: (NSArray*) message time: (double) time {
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error!" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIView *view = [[UIView alloc]init];
+    CGFloat heigthAlert = 80;
+    if (message.count > 1) {
+        heigthAlert = ((75 - 5*(message.count-1))*message.count);
+    }
+    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:alert.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:heigthAlert];
+    [alert.view addConstraint:height];
+    for (int index = 0; index < message.count; index ++) {
+        [view addSubview:[self returnLabel:index text:message[index] positionX:8 positionY:40 width:200 height:60]];
+    }
+    [alert.view addSubview:view];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, time * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [alert dismissViewControllerAnimated:true completion:nil];
     });
     return alert;
-}*/
+}
 
 @end

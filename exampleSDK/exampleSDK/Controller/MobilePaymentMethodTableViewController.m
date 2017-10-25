@@ -22,7 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.numberCip.text = [NSString stringWithFormat:@"%d",_cipResult.numberCip];
-    self.amountCip.text = [NSString stringWithFormat:@"%.2f",_cipResult.amount];
+    self.amountCip.text = [NSString stringWithFormat:@" S/.%.2f",_cipResult.amount];
+    if([_cipResult.currency  isEqual: @"USD"]) {
+        self.amountCip.text = [NSString stringWithFormat:@" $ %.2f",_cipResult.amount];
+    }
     self.dateExpiryCip.text = [[Help alloc]stringToTypeDate:@"2017-10-26T11:33:59-05:00"];
 }
 

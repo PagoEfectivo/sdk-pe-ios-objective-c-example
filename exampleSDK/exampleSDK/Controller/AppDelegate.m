@@ -22,6 +22,8 @@
                   accessKey:@"AKIPJP77AHN2DKVIJCCA"
                   serviceId:5];
     [[IQKeyboardManager sharedManager] isEnabled];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
     return YES;
 }
 @end

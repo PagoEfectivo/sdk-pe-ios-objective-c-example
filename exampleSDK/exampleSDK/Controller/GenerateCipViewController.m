@@ -43,8 +43,9 @@
     [super viewDidLoad];
     _currencyPicker = [[UIPickerView alloc] init];
     _documentTypePicker = [[UIPickerView alloc] init];
-    _currencyList = @[@"PEN",@"USD"];
-    _documentTypeList = @[@"DNI",@"PAS",@"PAR",@"LMI",@"NAN"];
+    _dateExpiry = [[UIDatePicker alloc]init];
+    [self setupPicker:_currencyPicker];
+    [self setupPicker:_documentTypePicker];
     [self setupDatePicker:_dateExpiry];
     [self inputPickertoTextField:_currencyCip picker:_currencyPicker];
     [self inputPickertoTextField:_userDocumentTypeCip picker:_documentTypePicker];
@@ -52,16 +53,17 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-
+    _currencyList = @[@"PEN",@"USD"];
+    _documentTypeList = @[@"DNI",@"PAS",@"PAR",@"LMI",@"NAN"];
+    _btngenerateCip.enabled = true;
 }
 
-- (void) setupPiker: (UIPickerView*) picker {
+- (void) setupPicker: (UIPickerView*) picker {
     picker.delegate = self;
     picker.dataSource = self;
 }
 
 - (void) setupDatePicker: (UIDatePicker*) pickerDate {
-    pickerDate = [[UIDatePicker alloc]init];
     [pickerDate addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     pickerDate.timeZone = [NSTimeZone localTimeZone];
 }
@@ -108,9 +110,13 @@
             NSArray *arrayaux  = [errors valueForKey:@"errorsFounded"];
             for (int index = 0; index < arrayaux.count; index ++) {
                 NSDictionary *dictionaryAux = arrayaux[index];
-                [errorsForUser addObject:[dictionaryAux valueForKey:@"message"]];
+                [errorsForUser addObject:[NSString stringWithFormat:@"%d.%@ ",(index+1), [dictionaryAux valueForKey:@"message"]]];
             }
-            [refresh stopAnimating];
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                [refresh stopAnimating];
+                [self presentViewController:[[Help alloc]customAlert:errorsForUser time:2] animated:true completion:nil];
+            });
+             _btngenerateCip.enabled = true;
         } else {
             _cipResult = [CipResult alloc];
             NSDictionary *result = receivedData;
@@ -144,11 +150,11 @@
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    NSString *title = _documentTypeList[row];
     if (pickerView == _currencyPicker) {
-        return _currencyList[row];
-    } else {
-        return _documentTypeList[row];
+        title = _currencyList[row];
     }
+    return title;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
