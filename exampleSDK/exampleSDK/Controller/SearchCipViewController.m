@@ -9,8 +9,10 @@
 #import "SearchCipViewController.h"
 #import "Help.h"
 #import "ResultSearchCip.h"
+#import "ResultSearchTableViewController.h"
 @interface SearchCipViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *positionYBtnSearch;
+@property (weak, nonatomic) IBOutlet UIButton *btnSearch;
 
 @end
 
@@ -44,12 +46,17 @@ static NSMutableArray *resultSearch;
         counter = counter + 1 ;
         _positionYBtnSearch.constant = (CGFloat) (37 + 45 * counter);
     } else {
-        NSLog(@"%@",@"solamente hasta 5 cips");
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self presentViewController:[[Help alloc]simpleAlert:@"Número máximo de CIPs : 5" time:2 ]animated:true completion:nil];
+        });
     }
 }
 
 
 - (IBAction)searchCip:(UIButton *)sender {
+    _btnSearch.enabled = false;
+    UIActivityIndicatorView *refresh = [[Help alloc] createRefresher:self.view];
+    [refresh startAnimating];
     for (int index = 0; index < arrayLbls.count; index ++) {
         UITextField *cip = arrayLbls[index];
         [arrayCips addObject:cip.text];
@@ -57,14 +64,20 @@ static NSMutableArray *resultSearch;
     
     [[PagoEfectivoSDK Cip]search:arrayCips responseHandler:^(long status, id receivedData, NSError *error) {
         if(error != nil){
-            NSLog(@"%@",error);
+            NSString * message = error.localizedDescription;
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                [self presentViewController:[[Help alloc]simpleAlert:message time:2 ]animated:true completion:nil];
+                _btnSearch.enabled = true;
+                [arrayCips removeAllObjects];
+                [refresh stopAnimating];
+            });
         } else {
             NSDictionary *result = receivedData;
             NSArray * data = [result objectForKey:@"data"];
             for (NSDictionary *element in data) {
                 ResultSearchCip *cipResultSearch = [ResultSearchCip alloc];
                 cipResultSearch.amount = [[element objectForKey:@"amount"] doubleValue];
-                cipResultSearch.numberCip = [[element objectForKey:@"amount"] intValue];
+                cipResultSearch.numberCip = [[element objectForKey:@"cip"] intValue];
                 cipResultSearch.currency = [element objectForKey:@"currency"];
                 cipResultSearch.dateCreationCip = [element objectForKey:@"dateCreation"];
                 cipResultSearch.dateExpiry = [element objectForKey:@"dateExpiry"];
@@ -75,9 +88,18 @@ static NSMutableArray *resultSearch;
                 cipResultSearch.transactionCode = [element objectForKey:@"transactionCode"];
                 [resultSearch addObject:cipResultSearch];
             }
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                [self performSegueWithIdentifier:@"showResultSearch" sender:self];
+                [refresh stopAnimating];
+            });
         }
     }];
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showResultSearch"]) {
+        ResultSearchTableViewController * view = [segue destinationViewController];
+        view.arrayResultSearch = resultSearch;
+    }
+}
 
 @end

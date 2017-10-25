@@ -10,15 +10,32 @@
 
 @implementation Help
 
-
 -(currency) StringToCurrency:(NSString*) value {
-    
-    return PEN;
+    currency aux = NONE;
+    if([value  isEqual: @"PEN"]) {
+        aux = PEN;
+    }
+    if ([value  isEqual: @"USD"]) {
+        aux = USD;
+    }
+    return aux;
 }
 
 -(documentType) StringToDocumentType: (NSString*) value {
-    
-    return DNI;
+    documentType aux = NANE;
+    if([value  isEqual: @"DNI"]) {
+        aux = DNI;
+    }
+    if([value  isEqual: @"PASS"]) {
+        aux = PASS;
+    }
+    if([value  isEqual: @"LMI"]) {
+        aux = LMI;
+    }
+    if([value  isEqual: @"PAR"]) {
+        aux = PAR;
+    }
+    return aux;
 }
 
 -(UILabel*) returnLabel : (int) numberLbel {
@@ -41,5 +58,45 @@
     
     return textField;
 }
+
+-(NSString*) stringToTypeDate : (NSString*) string {
+    
+    NSString *aux = string;
+    NSString *year = [aux substringToIndex:4];
+    NSString *month = [aux substringWithRange:NSMakeRange(5,2)];
+    NSString *day = [aux substringWithRange:NSMakeRange(8,2)];
+    NSString *hour = [aux substringWithRange:NSMakeRange(11,2)];
+    NSString *min = [aux substringWithRange:NSMakeRange(14,2)];
+    NSString *sec = [aux substringWithRange:NSMakeRange(17,2)];
+    
+    return [NSString stringWithFormat: @"%@/%@/%@ %@:%@:%@", day,month,year,hour,min,sec];
+}
+
+-(UIActivityIndicatorView*) createRefresher: (UIView*)view {
+    
+    UIActivityIndicatorView *refresh = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    refresh.hidesWhenStopped = true;
+    refresh.center = view.center;
+    [view addSubview:refresh];
+    return refresh;
+}
+
+-(UIAlertController*) simpleAlert: (NSString*) message time: (double) time {
+    
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error!" message:message preferredStyle:UIAlertControllerStyleAlert];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, time * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [alert dismissViewControllerAnimated:true completion:nil];
+    });
+    return alert;
+}
+
+/*-(UIAlertController*) customAlert: (NSArray*) message time: (double) time {
+    
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Error!" message:message preferredStyle:UIAlertControllerStyleAlert];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, time * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [alert dismissViewControllerAnimated:true completion:nil];
+    });
+    return alert;
+}*/
 
 @end

@@ -8,6 +8,7 @@
 
 #import "AgentPaymentMethodTableViewController.h"
 #import "SummaryViewController.h"
+#import "Help.h"
 
 @interface AgentPaymentMethodTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *numberCip;
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     self.numberCip.text = [NSString stringWithFormat:@"%d",_cipResult.numberCip];
     self.amountCip.text = [NSString stringWithFormat:@"%f2",_cipResult.amount];
-    self.dateExpiryCip.text = _cipResult.dateExpiry;
+    self.dateExpiryCip.text = [[Help alloc]stringToTypeDate:_cipResult.dateExpiry];
 }
 
 - (void)didReceiveMemoryWarning {

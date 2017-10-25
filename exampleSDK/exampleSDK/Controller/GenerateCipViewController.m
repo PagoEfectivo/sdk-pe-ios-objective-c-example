@@ -10,6 +10,7 @@
 #import <PagoEfectivoSDK/PagoEfectivoSDK.h>
 #import "CipResult.h"
 #import "PaymentMethodTableViewController.h"
+#import "Help.h"
 
 @interface GenerateCipViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *currencyCip;
@@ -29,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userCodeCountryCip;
 @property (weak, nonatomic) IBOutlet UITextField *adminEmailCip;
 @property (weak, nonatomic) IBOutlet UIButton *btnNextView;
+@property (weak, nonatomic) IBOutlet UIButton *btngenerateCip;
 @property CipRequest *dataCipRequest;
 @property NSArray *currencyList;
 @property NSArray *documentTypeList;
@@ -41,18 +43,31 @@
     [super viewDidLoad];
     _currencyPicker = [[UIPickerView alloc] init];
     _documentTypePicker = [[UIPickerView alloc] init];
-    _dateExpiry = [[UIDatePicker alloc]init];
     _currencyList = @[@"PEN",@"USD"];
     _documentTypeList = @[@"DNI",@"PAS",@"PAR",@"LMI",@"NAN"];
-    self.currencyPicker.delegate = self;
-    self.currencyPicker.dataSource = self;
-    self.documentTypePicker.delegate = self;
-    self.documentTypePicker.dataSource = self;
-    self.currencyCip.inputView = _currencyPicker;
-    self.userDocumentTypeCip.inputView = _documentTypePicker;
+    [self setupDatePicker:_dateExpiry];
+    [self inputPickertoTextField:_currencyCip picker:_currencyPicker];
+    [self inputPickertoTextField:_userDocumentTypeCip picker:_documentTypePicker];
     self.dateExpiryCip.inputView = _dateExpiry;
-    [_dateExpiry addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
-    _dateExpiry.timeZone = [NSTimeZone localTimeZone];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+
+}
+
+- (void) setupPiker: (UIPickerView*) picker {
+    picker.delegate = self;
+    picker.dataSource = self;
+}
+
+- (void) setupDatePicker: (UIDatePicker*) pickerDate {
+    pickerDate = [[UIDatePicker alloc]init];
+    [pickerDate addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+    pickerDate.timeZone = [NSTimeZone localTimeZone];
+}
+
+- (void) inputPickertoTextField: (UITextField*) textField picker: (UIPickerView*)picker {
+    textField.inputView = picker;
 }
 
 - (void)datePickerValueChanged:(id)sender {
@@ -64,8 +79,11 @@
 
 - (IBAction)generateCip:(UIButton *)sender {
     
+    _btngenerateCip.enabled = false;
+    UIActivityIndicatorView *refresh = [[Help alloc] createRefresher:self.view];
+    [refresh startAnimating];
     _dataCipRequest = [CipRequest alloc];
-    _dataCipRequest.currency = PEN; // default
+    _dataCipRequest.currency = [[Help alloc]StringToCurrency:self.currencyCip.text];
     _dataCipRequest.transactionCode = self.transactionCodeCip.text;
     _dataCipRequest.additionalData = self.additionalDataCip.text;
     _dataCipRequest.paymentConcept = self.paymentConceptCip.text;
@@ -74,20 +92,25 @@
     _dataCipRequest.userLastName = self.userLastNameCip.text;
     _dataCipRequest.userUbigeo = self.userUbigeoCip.text;
     _dataCipRequest.userCountry = self.userCountryCip.text;
-    _dataCipRequest.userDocumentType = NONE; // default
+    _dataCipRequest.userDocumentType = [[Help alloc]StringToDocumentType:self.userDocumentTypeCip.text];
     _dataCipRequest.userDocumentNumber = self.userNumberDocCip.text;
     _dataCipRequest.userPhone = self.userPhoneCip.text;
     _dataCipRequest.userCodeCountry = self.userCodeCountryCip.text;
     _dataCipRequest.adminEmail = self.adminEmailCip.text;
-    if([_amountCip.text  isEqual: @""]) {
-        _dataCipRequest.amount = 0;
-    } else {
+    _dataCipRequest.amount = 0;
+    if(![_amountCip.text  isEqual: @""]) {
         _dataCipRequest.amount = [self.amountCip.text doubleValue];
     }
-
+    NSMutableArray *errorsForUser = [[NSMutableArray alloc]init];
     [[PagoEfectivoSDK Cip]generate:self.dataCipRequest responseHandler:^(long status, id receivedData, NSError *error) {
         if (error != nil) {
-            NSLog(@"%@", error);
+            NSDictionary *errors = error.userInfo;
+            NSArray *arrayaux  = [errors valueForKey:@"errorsFounded"];
+            for (int index = 0; index < arrayaux.count; index ++) {
+                NSDictionary *dictionaryAux = arrayaux[index];
+                [errorsForUser addObject:[dictionaryAux valueForKey:@"message"]];
+            }
+            [refresh stopAnimating];
         } else {
             _cipResult = [CipResult alloc];
             NSDictionary *result = receivedData;
@@ -99,11 +122,11 @@
             _cipResult.numberCip = [[data objectForKey:@"cip"] intValue];
             dispatch_async(dispatch_get_main_queue(), ^(void){
                 [self performSegueWithIdentifier:@"showPaymentMethod" sender:self];
+                [refresh stopAnimating];
             });
         }
     }];
 }
-
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -112,11 +135,11 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
+    NSInteger numberRows = _documentTypeList.count;
     if (pickerView == _currencyPicker) {
-        return _currencyList.count;
-    } else {
-        return _documentTypeList.count;
+        numberRows = _currencyList.count;
     }
+    return numberRows;
 }
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
