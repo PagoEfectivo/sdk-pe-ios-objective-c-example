@@ -40,14 +40,14 @@ static NSMutableArray *resultSearch;
 
     if (counter < 5) {
         UITextField *aux = [[Help alloc]returnTextField:counter];
-        [self.view addSubview: [[Help alloc]returnLabel:counter]];
+        [self.view addSubview: [[Help alloc]returnLabel:counter text:@"CIP" positionX:50 positionY:143 width:37 height:30]];
         [self.view addSubview:aux];
         [arrayLbls addObject:aux];
         counter = counter + 1 ;
         _positionYBtnSearch.constant = (CGFloat) (37 + 45 * counter);
     } else {
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            [self presentViewController:[[Help alloc]simpleAlert:@"Número máximo de CIPs : 5" time:2 ]animated:true completion:nil];
+            [self presentViewController:[[Help alloc]simpleAlert:@"Número máximo de CIPS : 5" time:2 ]animated:true completion:nil];
         });
     }
 }
