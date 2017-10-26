@@ -9,5 +9,4 @@
 #import "CipResult.h"
 
 @implementation CipResult
- 
 @end

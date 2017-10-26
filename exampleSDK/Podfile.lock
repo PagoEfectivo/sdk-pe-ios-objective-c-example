@@ -1,19 +1,19 @@
 PODS:
+  - Cocoa (0.0.1)
   - IQKeyboardManager (5.0.4)
-  - PagoEfectivoSDK (0.1.1)
 
 DEPENDENCIES:
+  - Cocoa (from `~/Desktop/Cocoa`)
   - IQKeyboardManager
-  - PagoEfectivoSDK (from `~/Projects/ios/pagoefectivo-sdk-pod-ios/PagoEfectivoSDK`)
 
 EXTERNAL SOURCES:
-  PagoEfectivoSDK:
-    :path: ~/Projects/ios/pagoefectivo-sdk-pod-ios/PagoEfectivoSDK
+  Cocoa:
+    :path: ~/Desktop/Cocoa
 
 SPEC CHECKSUMS:
+  Cocoa: a986e2264a06cd526ac180a1d34f9afb1b7c95f0
   IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
-  PagoEfectivoSDK: c5ea53edaa6c086284d3ea4efc014c76ec99c8a8
 
-PODFILE CHECKSUM: 5a66767dec96ba4125bf5b9f49a7e2188a29a758
+PODFILE CHECKSUM: 5a9d782084066b866c74bc22346beaa95b0c37c0
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0.beta.1

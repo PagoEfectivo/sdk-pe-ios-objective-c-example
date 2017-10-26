@@ -11,7 +11,6 @@
 @interface SummaryViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *sumaryTitle;
 @property (weak, nonatomic) IBOutlet UILabel *numerCip;
-
 @end
 
 @implementation SummaryViewController
@@ -28,8 +27,5 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
-
-
 @end
