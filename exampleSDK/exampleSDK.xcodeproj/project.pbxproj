@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4143EF731F97ABBC0056609D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4143EF721F97ABBC0056609D /* AppDelegate.m */; };
-		4143EF761F97ABBC0056609D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4143EF751F97ABBC0056609D /* ViewController.m */; };
 		4143EF791F97ABBC0056609D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4143EF771F97ABBC0056609D /* Main.storyboard */; };
 		4143EF7B1F97ABBC0056609D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4143EF7A1F97ABBC0056609D /* Assets.xcassets */; };
 		4143EF7E1F97ABBC0056609D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4143EF7C1F97ABBC0056609D /* LaunchScreen.storyboard */; };
@@ -46,8 +45,6 @@
 		4143EF6E1F97ABBC0056609D /* exampleSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4143EF711F97ABBC0056609D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Controller/AppDelegate.h; sourceTree = "<group>"; };
 		4143EF721F97ABBC0056609D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../Controller/AppDelegate.m; sourceTree = "<group>"; };
-		4143EF741F97ABBC0056609D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4143EF751F97ABBC0056609D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4143EF781F97ABBC0056609D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4143EF7A1F97ABBC0056609D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4143EF7D1F97ABBC0056609D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -154,22 +151,8 @@
 		56233D9A1F9AA0C000C3EC27 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4143EF741F97ABBC0056609D /* ViewController.h */,
-				4143EF751F97ABBC0056609D /* ViewController.m */,
-				56233D9D1F9AA13100C3EC27 /* GenerateCipViewController.h */,
-				56233D9E1F9AA13100C3EC27 /* GenerateCipViewController.m */,
-				56233DA01F9AA1B600C3EC27 /* SearchCipViewController.h */,
-				56233DA11F9AA1B600C3EC27 /* SearchCipViewController.m */,
-				56233DA31F9AA20200C3EC27 /* PaymentMethodTableViewController.h */,
-				56233DA41F9AA20200C3EC27 /* PaymentMethodTableViewController.m */,
-				56233DA61F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.h */,
-				56233DA71F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m */,
-				56233DA91F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.h */,
-				56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */,
-				56233DAC1F9AA3E000C3EC27 /* SummaryViewController.h */,
-				56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */,
-				565E62691FA0D6E10063195D /* ResultSearchTableViewController.h */,
-				565E626A1FA0D6E10063195D /* ResultSearchTableViewController.m */,
+				5632AAD91FA288ED0097AC71 /* Generate */,
+				5632AADA1FA289010097AC71 /* Search */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +168,34 @@
 				560969391F9E860A003991C0 /* Help.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		5632AAD91FA288ED0097AC71 /* Generate */ = {
+			isa = PBXGroup;
+			children = (
+				56233DA31F9AA20200C3EC27 /* PaymentMethodTableViewController.h */,
+				56233DA41F9AA20200C3EC27 /* PaymentMethodTableViewController.m */,
+				56233DA61F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.h */,
+				56233DA71F9AA36E00C3EC27 /* MobilePaymentMethodTableViewController.m */,
+				56233DA91F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.h */,
+				56233DAA1F9AA38200C3EC27 /* AgentPaymentMethodTableViewController.m */,
+				56233DAC1F9AA3E000C3EC27 /* SummaryViewController.h */,
+				56233DAD1F9AA3E000C3EC27 /* SummaryViewController.m */,
+				56233D9D1F9AA13100C3EC27 /* GenerateCipViewController.h */,
+				56233D9E1F9AA13100C3EC27 /* GenerateCipViewController.m */,
+			);
+			path = Generate;
+			sourceTree = "<group>";
+		};
+		5632AADA1FA289010097AC71 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				56233DA01F9AA1B600C3EC27 /* SearchCipViewController.h */,
+				56233DA11F9AA1B600C3EC27 /* SearchCipViewController.m */,
+				565E62691FA0D6E10063195D /* ResultSearchTableViewController.h */,
+				565E626A1FA0D6E10063195D /* ResultSearchTableViewController.m */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		5667C5C11F9FFCB500784EF8 /* Cell */ = {
@@ -285,13 +296,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-exampleSDK/Pods-exampleSDK-frameworks.sh",
+				"${PODS_ROOT}/../../../../Cocoa/Cocoa/PagoEfectivoSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${PODS_ROOT}/../../../pagoefectivo-sdk-pod-ios/PagoEfectivoSDK/PagoEfectivoSDK/PagoEfectivoSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagoEfectivoSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -339,7 +350,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				56233D9F1F9AA13100C3EC27 /* GenerateCipViewController.m in Sources */,
-				4143EF761F97ABBC0056609D /* ViewController.m in Sources */,
 				56233DAE1F9AA3E000C3EC27 /* SummaryViewController.m in Sources */,
 				56233DA21F9AA1B600C3EC27 /* SearchCipViewController.m in Sources */,
 				565E626B1FA0D6E10063195D /* ResultSearchTableViewController.m in Sources */,

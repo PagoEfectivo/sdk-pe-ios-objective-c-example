@@ -13,7 +13,6 @@
 @interface SearchCipViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *positionYBtnSearch;
 @property (weak, nonatomic) IBOutlet UIButton *btnSearch;
-
 @end
 
 @implementation SearchCipViewController
@@ -47,11 +46,10 @@ static NSMutableArray *resultSearch;
         _positionYBtnSearch.constant = (CGFloat) (37 + 45 * counter);
     } else {
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            [self presentViewController:[[Help alloc]simpleAlert:@"Número máximo de CIPS : 5" time:2 ]animated:true completion:nil];
+            [self presentViewController:[[Help alloc]simpleAlert:@"Número máximo de CIPS : 5" time:1.5]animated:true completion:nil];
         });
     }
 }
-
 
 - (IBAction)searchCip:(UIButton *)sender {
     _btnSearch.enabled = false;
@@ -91,6 +89,7 @@ static NSMutableArray *resultSearch;
             dispatch_async(dispatch_get_main_queue(), ^(void){
                 [self performSegueWithIdentifier:@"showResultSearch" sender:self];
                 [refresh stopAnimating];
+                _btnSearch.enabled = true;
             });
         }
     }];
@@ -101,5 +100,4 @@ static NSMutableArray *resultSearch;
         view.arrayResultSearch = resultSearch;
     }
 }
-
 @end

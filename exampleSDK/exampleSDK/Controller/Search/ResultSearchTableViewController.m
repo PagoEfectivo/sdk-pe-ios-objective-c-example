@@ -11,7 +11,6 @@
 #import "ResultSearchCip.h"
 #import "Help.h"
 @interface ResultSearchTableViewController ()
-
 @end
 
 @implementation ResultSearchTableViewController
@@ -25,7 +24,6 @@
     
 }
 
-
 -(void)viewWillAppear:(BOOL)animated
 {
 }
@@ -38,7 +36,6 @@
     return _arrayResultSearch.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailSearchCipTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"DetailSearchCipTableViewCell" owner:self options:nil] firstObject];
     ResultSearchCip *aux = _arrayResultSearch[indexPath.row];
@@ -48,10 +45,10 @@
     cell.curencyCip.text = aux.currency;
     cell.statusCip.text = [NSString stringWithFormat: @"%d", aux.statusCip];
     cell.statusNameCip.text = aux.statusNameCip;
-    cell.dateCreationCip.text = [[Help alloc]stringToTypeDate:aux.dateCreationCip];
-    cell.dateExpiryCip.text = [[Help alloc]stringToTypeDate:aux.dateExpiry];
-    cell.datePaymentCip.text = [[Help alloc]stringToTypeDate:aux.datePaymentCip];
-    cell.dateRemovalCip.text = [[Help alloc]stringToTypeDate:aux.dateRemovalCip];
+    cell.dateCreationCip.text = [[Help alloc]getFormatterEvent:aux.dateCreationCip];
+    cell.dateExpiryCip.text = [[Help alloc]getFormatterEvent:aux.dateExpiry];
+    cell.datePaymentCip.text = [[Help alloc]getFormatterEvent:aux.datePaymentCip];
+    cell.dateRemovalCip.text = [[Help alloc]getFormatterEvent:aux.dateRemovalCip];
     
     return cell;
 }
@@ -59,6 +56,4 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 320;
 }
-
-
 @end

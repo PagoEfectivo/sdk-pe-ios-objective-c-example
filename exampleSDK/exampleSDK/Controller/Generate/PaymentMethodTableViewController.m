@@ -9,9 +9,9 @@
 #import "PaymentMethodTableViewController.h"
 #import "MobilePaymentMethodTableViewController.h"
 #import "AgentPaymentMethodTableViewController.h"
+#import "Help.h"
 
 @interface PaymentMethodTableViewController ()
-
 @end
 
 @implementation PaymentMethodTableViewController
@@ -24,29 +24,22 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return 6;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if ( indexPath.row == 0) {
         [self performSegueWithIdentifier:@"showMobileMethod" sender:self];
     } else if (indexPath.row == 1) {
         [self performSegueWithIdentifier:@"showAgentMethod" sender:self];
     } else {
-        NSLog(@"%@",@"Opción incorrecta");
+        [self presentViewController:[[Help alloc]customAlert:@[@"Opción incorrecta"] time:1.5]animated:true completion:nil];
     }
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -59,6 +52,4 @@
         view.cipResult = _cipResult;
     }
 }
-
-
 @end

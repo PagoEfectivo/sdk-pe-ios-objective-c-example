@@ -9,5 +9,4 @@
 #import "ResultSearchCip.h"
 
 @implementation ResultSearchCip
-
 @end

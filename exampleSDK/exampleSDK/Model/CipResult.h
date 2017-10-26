@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface CipResult : NSObject
-
 @property (assign) int numberCip;
 @property (nonatomic,strong)NSString* dateExpiry;
 @property (nonatomic,strong)NSString* transactionCode;
