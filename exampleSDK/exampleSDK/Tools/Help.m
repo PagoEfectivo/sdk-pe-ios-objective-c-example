@@ -11,31 +11,39 @@
 @implementation Help
 
 -(currency) StringToCurrency:(NSString*) value {
-    currency aux = NONE;
-    if([value  isEqual: @"PEN"]) {
-        aux = PEN;
-    }
-    if ([value  isEqual: @"USD"]) {
-        aux = USD;
-    }
-    return aux;
+    currency (^currencySelected)(void) = @{
+        @"PEN": ^{
+            return PEN;
+        },
+        @"USD": ^{
+            return USD;
+        },
+        @"":^{
+            return NONE;
+        }
+    }[value];
+    return currencySelected();
 }
 
 -(documentType) StringToDocumentType: (NSString*) value {
-    documentType aux = NANE;
-    if([value  isEqual: @"DNI"]) {
-        aux = DNI;
-    }
-    if([value  isEqual: @"PASS"]) {
-        aux = PASS;
-    }
-    if([value  isEqual: @"LMI"]) {
-        aux = LMI;
-    }
-    if([value  isEqual: @"PAR"]) {
-        aux = PAR;
-    }
-    return aux;
+    documentType (^documentTypeSelected)(void) = @{
+       @"DNI": ^{
+           return DNI;
+       },
+       @"PASS": ^{
+           return PASS;
+       },
+       @"LMI": ^{
+           return LMI;
+       },
+       @"PAR": ^{
+           return PAR;
+       },
+       @"": ^{
+           return NANE;
+       }
+    }[value];
+    return documentTypeSelected();
 }
 
 -(UILabel*) returnLabel : (int) numberLbel text: (NSString*)text positionX: (int)positionX positionY: (int)positionY width: (int)width height: (int)height {

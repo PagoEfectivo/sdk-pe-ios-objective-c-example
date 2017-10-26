@@ -285,13 +285,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-exampleSDK/Pods-exampleSDK-frameworks.sh",
-				"${PODS_ROOT}/../../../../Cocoa/Cocoa/PagoEfectivoSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${PODS_ROOT}/../../../pagoefectivo-sdk-pod-ios/PagoEfectivoSDK/PagoEfectivoSDK/PagoEfectivoSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagoEfectivoSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PagoEfectivoSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
